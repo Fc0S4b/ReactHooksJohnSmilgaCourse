@@ -4,7 +4,30 @@ import { data } from '../../../data';
 // reducer function
 
 const Index = () => {
-  return <h2>useReducer</h2>;
+  const [name, setName] = useState('');
+  const [people, setPeople] = useState(data);
+  const [showModa, setShowModal] = useState(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (name) {
+    } else {
+    }
+  };
+  return (
+    <>
+      {showModal && <Modal />}
+      <form onSubmit={handleSubmit}>
+        <div>
+          <input
+            type="text"
+            value={name}
+            onChange={() => setName(e.target.value)}
+          />
+        </div>
+        <button type="submit">add</button>
+      </form>
+    </>
+  );
 };
 
 export default Index;
